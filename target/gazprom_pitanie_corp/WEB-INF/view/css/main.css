@@ -1,0 +1,12 @@
+.page {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+}
+
+.my-page-footer {
+    margin-top: auto;
+    color: white;
+}
