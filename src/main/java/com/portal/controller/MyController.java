@@ -17,7 +17,7 @@ public class MyController {
 
     @RequestMapping ("/")
     public String getInfoForAllEmps(){
-        return "view_for_all_employees";
+        return "main";
     }
 
     @RequestMapping("/hr_info")
@@ -31,5 +31,51 @@ public class MyController {
     public String getInfoOnlyForManagers(Model model){
         return "view_for_managers";
     }
+
+    @RequestMapping ("/employees")
+    public String showEmployeesPage(){
+        return "employees";
+    }
+
+    @RequestMapping ("/news")
+    public String showNewsPage(){
+        return "news";
+    }
+
+    @RequestMapping ("/documents")
+    public String showDocumentsPage(){
+        return "documents";
+    }
+
+    @RequestMapping ("/knowledge")
+    public String showKnowledgePage(){
+        return "knowledge";
+    }
+
+    @RequestMapping ("/vacancies")
+    public String showVacanciesPage(){
+        return "vacancies";
+    }
+
+    @RequestMapping ("/gallery")
+    public String showGalleryPage(){
+        return "gallery";
+    }
+
+    @RequestMapping ("/tradeUnion")
+    public String showTradeUnionPage(){
+        return "tradeUnion";
+    }
+
+    @RequestMapping ("/about")
+    public String showAboutPage(){
+        return "about";
+    }
+
+    @RequestMapping ("/administrator")
+    public String showAdminPage(){
+        return "administrator";
+    }
+
 
 }
