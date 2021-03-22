@@ -28,12 +28,14 @@ INSERT INTO gazprom_pitanie_db.users (username, password, enabled)
 VALUES
 ('zaur', '{noop}zaur', 1),
 ('elena', '{noop}elena', 1),
+('admin', '{noop}admin', 1),
 ('ivan', '{noop}ivan', 1);
 
 INSERT INTO gazprom_pitanie_db.authorities (username, authority)
 VALUES
 ('zaur', 'ROLE_EMPLOYEE'),
 ('elena', 'ROLE_HR'),
+('admin', 'ROLE_ADMINISTRATOR'),
 ('ivan', 'ROLE_HR'),
 ('ivan', 'ROLE_MANAGER');
 

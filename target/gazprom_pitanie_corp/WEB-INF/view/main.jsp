@@ -22,7 +22,7 @@
     <br><br>
 
 
-    <security:authorize access="hasRole('HR')">
+    <security:authorize access="hasAnyRole('HR','ADMINISTRATOR')">
         <input type="button" value="Salary" onclick="window.location.href='hr_info'"> Only for HR staff
     </security:authorize>
     <br><br>
