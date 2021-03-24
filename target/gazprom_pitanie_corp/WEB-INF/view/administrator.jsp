@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Максим
@@ -14,5 +15,8 @@
 <%--Подключаем header--%>
 <jsp:include page="header.jsp"/>
 Админка
+<ul>
+    <li><a href="<c:url value="/users"/>">Пользователи</a></li>
+</ul>
 </body>
 </html>

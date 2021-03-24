@@ -1,7 +1,10 @@
 package com.portal.controller;
 
+import com.portal.dao.UsersDAO;
 import com.portal.entity.Employee;
+import com.portal.entity.Users;
 import com.portal.service.EmployeeService;
+import com.portal.service.UsersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,6 +17,9 @@ public class MyController {
 
     @Autowired
     private EmployeeService employeeService;
+
+    @Autowired
+    private UsersService usersService;
 
     @RequestMapping ("/")
     public String getInfoForAllEmps(){
@@ -75,6 +81,13 @@ public class MyController {
     @RequestMapping ("/administrator")
     public String showAdminPage(){
         return "administrator";
+    }
+
+    @RequestMapping ("/users")
+    public String showUsersPage(Model model){
+        List<Users> allUsers = usersService.getAllUsers();
+        model.addAttribute("allUsers",allUsers);
+        return "users";
     }
 
 

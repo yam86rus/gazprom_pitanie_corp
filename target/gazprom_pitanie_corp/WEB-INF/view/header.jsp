@@ -22,6 +22,13 @@
         <security:authorize access="hasRole('ADMINISTRATOR')">
             <li><a href="<c:url value="/administrator"/>">Администрирование</a></li>
         </security:authorize>
+        <security:authorize access="isAnonymous()">
+            <li><a href="<c:url value="/login"/>">Войти</a></li>
+        </security:authorize>
+
+        <security:authorize access="isAuthenticated()">
+            <li><a href="<c:url value="/logout"/>">Выйти</a></li>
+        </security:authorize>
     </ul>
 </nav>
 
