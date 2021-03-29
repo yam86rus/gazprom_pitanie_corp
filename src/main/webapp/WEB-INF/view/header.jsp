@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
-<nav>
+<nav class="nav">
     <ul>
         <li><a href="<c:url value="/"/>"><img src="img/logo.png" alt="logo"></a></li>
         <li><a href="<c:url value="/employees"/>">Сотрудники</a></li>
