@@ -23,4 +23,27 @@ public class VacancyDAOImpl implements VacancyDAO {
 
         return allVacancies;
     }
+
+    @Override
+    public void saveVacancy(Vacancy vacancy) {
+        Session session = sessionFactory.getCurrentSession();
+        session.saveOrUpdate(vacancy);
+    }
+
+    @Override
+    public Vacancy getVacancy(int id) {
+        Session session = sessionFactory.getCurrentSession();
+        Vacancy vacancy = session.get(Vacancy.class, id);
+        return vacancy;
+    }
+
+    @Override
+    public void deleteVacancy(int id) {
+        Session session = sessionFactory.getCurrentSession();
+        Query<Vacancy> query = session.createQuery("delete from Vacancy where id=:vacancyId");
+        query.setParameter("vacancyId", id);
+        query.executeUpdate();
+
+    }
+
 }

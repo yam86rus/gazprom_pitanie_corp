@@ -1,6 +1,5 @@
 package com.portal.controller;
 
-import com.portal.dao.UsersDAO;
 import com.portal.entity.Employee;
 import com.portal.entity.Users;
 import com.portal.entity.Vacancy;
@@ -44,7 +43,8 @@ public class MyController {
     public String getInfoOnlyForManagers(Model model){
         return "view_for_managers";
     }
-// -------------------------- Employee----------------------------//
+
+    // -------------------------- Employee----------------------------//
     @RequestMapping ("/employees")
     public String showEmployeesPage(Model model){
         List<Employee> allEmployees = employeeService.getAllEmployees();
@@ -77,6 +77,7 @@ public class MyController {
         return "redirect:/employees";
     }
 
+    // ********************* Employee ****************************** //
 
     @RequestMapping ("/news")
     public String showNewsPage(){
@@ -93,12 +94,43 @@ public class MyController {
         return "knowledge";
     }
 
+
+// -------------------------- Vacancy ----------------------------//
+
     @RequestMapping ("/vacancies")
     public String showVacanciesPage(Model model){
         List<Vacancy> allVacancies = vacancyService.getAllVacancies();
         model.addAttribute("allVacancies", allVacancies);
         return "vacancies";
     }
+
+    @RequestMapping("/addNewVacancy")
+    public String addNewVacancy(Model model) {
+        Vacancy vacancy = new Vacancy();
+        model.addAttribute("vacancy", vacancy);
+        return "vacancy-info";
+
+    }
+    @RequestMapping("/saveVacancy")
+    public String saveVacancy(@ModelAttribute("vacancy") Vacancy vacancy) {
+        vacancyService.saveVacancy(vacancy);
+        return "redirect:/vacancies";
+    }
+
+    @RequestMapping("/updateVacancy")
+    public String updateVacancy(@RequestParam("vacancyId") int id, Model model){
+        Vacancy vacancy = vacancyService.getVacancy(id);
+        model.addAttribute("vacancy", vacancy);
+        return "vacancy-info";
+    }
+
+    @RequestMapping("/deleteVacancy")
+    public String deleteVacancy(@RequestParam("vacancyId") int id){
+        vacancyService.deleteVacancy(id);
+        return "redirect:/vacancies";
+    }
+
+    // /-------------------------- Vacancy ----------------------------//
 
     @RequestMapping ("/gallery")
     public String showGalleryPage(){

@@ -18,4 +18,22 @@ public class VacancyServiceImpl implements VacancyService{
     public List<Vacancy> getAllVacancies() {
         return vacancyDAO.getAllVacancies();
     }
+
+    @Override
+    @Transactional
+    public void saveVacancy(Vacancy vacancy) {
+        vacancyDAO.saveVacancy(vacancy);
+    }
+
+    @Override
+    @Transactional
+    public Vacancy getVacancy(int id) {
+        return vacancyDAO.getVacancy(id);
+    }
+
+    @Override
+    @Transactional
+    public void deleteVacancy(int id) {
+        vacancyDAO.deleteVacancy(id);
+    }
 }

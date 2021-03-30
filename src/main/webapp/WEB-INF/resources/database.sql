@@ -6,6 +6,7 @@ GRANT ALL PRIVILEGES ON *.* TO 'username'@'localhost';
 
 -- Создаем БД
 CREATE DATABASE gazprom_pitanie_db;
+ALTER SCHEMA `gazprom_pitanie_db`  DEFAULT COLLATE utf8mb4_unicode_520_ci ;
 USE gazprom_pitanie_db;
 
 

@@ -46,7 +46,7 @@ public class MyConfig implements WebMvcConfigurer {
         ComboPooledDataSource dataSource = new ComboPooledDataSource();
         try {
             dataSource.setDriverClass("com.mysql.cj.jdbc.Driver");
-            dataSource.setJdbcUrl("jdbc:mysql://localhost:3306/gazprom_pitanie_db?useSSL=false&serverTimezone=UTC");
+            dataSource.setJdbcUrl("jdbc:mysql://localhost:3306/gazprom_pitanie_db?useSSL=false&useUnicode=yes&characterEncoding=UTF-8&serverTimezone=UTC");
             dataSource.setUser("username");
             dataSource.setPassword("password");
         } catch (PropertyVetoException e) {
