@@ -3,8 +3,10 @@ package com.portal.controller;
 import com.portal.dao.UsersDAO;
 import com.portal.entity.Employee;
 import com.portal.entity.Users;
+import com.portal.entity.Vacancy;
 import com.portal.service.EmployeeService;
 import com.portal.service.UsersService;
+import com.portal.service.VacancyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,6 +24,9 @@ public class MyController {
 
     @Autowired
     private UsersService usersService;
+
+    @Autowired
+    private VacancyService vacancyService;
 
     @RequestMapping ("/")
     public String getInfoForAllEmps(){
@@ -89,7 +94,9 @@ public class MyController {
     }
 
     @RequestMapping ("/vacancies")
-    public String showVacanciesPage(){
+    public String showVacanciesPage(Model model){
+        List<Vacancy> allVacancies = vacancyService.getAllVacancies();
+        model.addAttribute("allVacancies", allVacancies);
         return "vacancies";
     }
 

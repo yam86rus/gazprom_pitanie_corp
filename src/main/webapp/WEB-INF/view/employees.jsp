@@ -42,8 +42,8 @@
             <td>${emp.salary}</td>
             <security:authorize access="hasAnyRole('SECRETARY','ADMINISTRATOR')">
             <td>
-                <input type="button" value="Update" onclick="window.location.href='${updateButton}'"/>
-                <input type="button" value="Delete" onclick="window.location.href='${deleteButton}'"/>
+                <input type="button" value="Изменить" onclick="window.location.href='${updateButton}'"/>
+                <input type="button" value="Удалить" onclick="window.location.href='${deleteButton}'"/>
             </td>
             </security:authorize>
         </tr>
